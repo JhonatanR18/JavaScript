@@ -112,7 +112,7 @@ const prod6 = new Product( // sexto elemento del array
     'Un mouse ergonómico y preciso para largas horas de uso',
     'Incluye impuesto País y percepción AFIP'
 )
-// Creamos el array de los productos
+// Creamos el ARRAY de los productos 
 let products = [prod1, prod2, prod3, prod4, prod5, prod6]
 
 

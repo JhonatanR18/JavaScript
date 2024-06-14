@@ -1,7 +1,7 @@
-// Renderizar los productos de forma dinámica
-const productSelector = document.getElementById("products");
+// Actividad: función que “encapsule” todo lo desarrollado en la actividad anterior.
+// const productSelector = document.getElementById("products");
 // Función createCard, recibe parámetro un objeto y devuelve un template string con sólo una tarjeta de producto. El objeto a recibir por la función será un producto con todas las propiedades definidas en la clase.
-function createCard (product){
+function createCard(product) {
     // modifica cada dato estático de la tarjeta
     return `
         <article class="product-card">
@@ -21,10 +21,21 @@ function createCard (product){
         </article>
     `;
 }
-// Reemplazar el contenido de la variable productsTemplate con una iteración for of para que cada vuelta “cargue” una tarjeta de producto. 
-let productTemplate = "";
-for (let element of products){
-    productTemplate = productTemplate + createCard(element)
+
+// define una función printCards 
+// que reciba como parámetro un array de productos "El array esta en products.js"
+// y el id del selector HTML idSelector
+function printCards(arrayProductos, idSelector) {
+    // define una variable para concatenar todas las tarjetas de los productos
+    let productsTemplates = ""
+    // itera con for of para que cada vuelta “cargue” una tarjeta de producto 
+    for (const elements of arrayProductos) {
+        productsTemplates = productsTemplates + createCard(elements)
+    }
+    // selecciona con getElementById la etiqueta idSelector
+    const productSelector = document.getElementById(idSelector)
+    // imprime con innerHTML
+    productSelector.innerHTML = productsTemplates
 }
-// Imprime el contenido en el selector con la propiedad innerHTML.
-productSelector.innerHTML = productTemplate
+// Necesario invocar a la función pasando el array y el id del selector
+printCards(products, "products")
