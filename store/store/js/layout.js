@@ -29,3 +29,75 @@ for ( let optionNav of optionsNav){
     navSelector.appendChild(anchor)
 }
 // Abre con live server el archivo index.html y observa la barra de navegación.
+
+
+// Renderizar el pie de página con métodos del DOM
+//seleccionar con el método getElementById la etiqueta correspondiente donde se Renderizar_a el footer.
+const footerSelector = document.getElementById("footer");
+// Array de objetos
+const optionsFooter = [
+    {title: "Ofertas", linkTo: "https://flexboxfroggy.com/#es", cols: [
+        {title: "Laptops", linkTo: "https://tailwindcss.com/"},
+        {title: "Audio", linkTo: "https://tailwindcss.com/"},
+        {title: "Auriculares", linkTo: "https://tailwindcss.com/"}
+    ]},
+    {title: "Cómo comprar", linkTo: "https://flexboxfroggy.com/#es", cols: [
+        {title: "Formas de pago", linkTo: "https://tailwindcss.com/"},
+        {title: "Envíos", linkTo: "https://tailwindcss.com/"},
+        {title: "Devoluciones", linkTo: "https://tailwindcss.com/"}
+    ]},
+    {title: "Costos y tarifas", linkTo: "https://flexboxfroggy.com/#es", cols: [
+        {title: "Impuestos", linkTo: "https://tailwindcss.com/"},
+        {title: "Facturación", linkTo: "https://tailwindcss.com/"}
+    ]},
+    {title: "Mis pedidos", linkTo: "https://flexboxfroggy.com/#es", cols: [
+        {title: "Pedir Nuevamente", linkTo: "https://tailwindcss.com/"},
+        {title: "Lista de deseos", linkTo: "https://tailwindcss.com/"},
+    ]},
+    {title: "Garantía de Entrega", linkTo: "https://flexboxfroggy.com/#es", cols: [""]},
+]
+// itera con for of
+for ( let optionFooter of optionsFooter){
+    // crear un elemento
+    const ul = document.createElement("ul")
+    // asignarle un nombre de clase
+    ul.className = "footer-ul"
+    // agregar un li
+    let li = document.createElement("li")
+    // asignarle una clase
+    li.className = "footer-main-item"
+    // crear una etiqueta a
+    let a = document.createElement("a")
+    // asignarle una clase
+    a.className = "footer-a"
+    // asignarle un texto 
+    a.textContent = optionFooter.title
+    // asignarle un href
+    a.href = optionFooter.linkTo
+    // agrega a al li
+    li.appendChild(a)
+    // agrega li al ul
+    ul.appendChild(li)
+
+    // itera con for of
+    for (let col of optionFooter.cols){
+        // crear un elemento li para los cols
+        let li = document.createElement("li")
+        // agrega una clase
+        li.className = "footer-li"
+        // crea una etiqueta a
+        let a = document.createElement("a")
+        // asignale una clase
+        a.className = "footer-a"
+        // asignale el texto
+        a.textContent = col.title
+        // asignale el href
+        a.href = col.linkTo
+        // agrega a al li
+        li.appendChild(a)
+        // agrega li al ul
+        ul.appendChild(li)
+    }
+    // agrega un hijo al footerSelector
+    footerSelector.appendChild(ul)
+}
