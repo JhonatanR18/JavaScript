@@ -1,8 +1,10 @@
 // Define la función captureText para que imprima por consola “capturado”. 
 const captureText = () =>{
-    console.log(`capturado`);
+    console.log("capturado");
 }
 
-// Identifica el input de búsqueda de index.html
-// Agrega el atributo onkeyup para asignar un evento de tipo keyup.
-/* <input type="text" placeholder="Search" onkeyup="captureText()" /> */
+// define una variable para seleccionar con el método querySelector
+let searchSelector = document.querySelector("#search");
+// agregar evento addEventListener 
+searchSelector.addEventListener("keyup", captureText)
+// evento tipo keyup - cada tecla presionada ejecuta la función captureText
