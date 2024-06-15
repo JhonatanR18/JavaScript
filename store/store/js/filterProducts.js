@@ -1,9 +1,18 @@
+// Remueve diacríticos | tildes y más
+const removeDiacritics = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 // modifica la función para que reciba un evento
 const captureText = (event) =>{
-    // imprime el evento completo
-    console.log(event);
-    // imprime el valor actual del campo de entrada
-    console.log(`Capturado: ${event.target.value}`);
+    // guarda en una variable el valor capturado por el evento
+    let text = event.target.value;
+    // filtra el array con todos los productos cuyo nombre incluya el texto capturado
+    let filterProductos = products.filter(product =>
+        // filtra a la vez title y description
+        removeDiacritics(product.title.toLowerCase()).includes(text.toLowerCase()) || 
+        removeDiacritics(product.description.toLowerCase()).includes(text.toLowerCase()))
+        // Necesario invocar a la función pasando el array y el id del selector
+        printCards(filterProductos, "products")
 }
 
 // define una variable para seleccionar con el método querySelector
