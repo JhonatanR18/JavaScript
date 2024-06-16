@@ -61,7 +61,7 @@ const prod2 = new Product( // segundo elemento del array
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod3 = new Product( // tercer elemento del array
-    '0002',
+    '0003',
     'Macbook Pro 15"4',
     6195,
     5637,
@@ -74,7 +74,7 @@ const prod3 = new Product( // tercer elemento del array
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod4 = new Product( // cuarto elemento del array
-    '0003',
+    '0004',
     'Monitor Gamer 27" QHD 2K Panel IPS',
     600,
     400,
@@ -87,7 +87,7 @@ const prod4 = new Product( // cuarto elemento del array
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod5 = new Product( // quinto elemento del array
-    '0004',
+    '0005',
     'Epson | Impresora EcoTank L5590',
     150,
     100,
@@ -100,7 +100,7 @@ const prod5 = new Product( // quinto elemento del array
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod6 = new Product( // sexto elemento del array
-    '0005',
+    '0006',
     'Mouse | Logitech G502 Lightspeed',
     250,
     220,

@@ -3,9 +3,10 @@
 // Función createCard, recibe parámetro un objeto y devuelve un template string con sólo una tarjeta de producto. El objeto a recibir por la función será un producto con todas las propiedades definidas en la clase.
 function createCard(product) {
     // modifica cada dato estático de la tarjeta
+    // Debe tener una consulta o query dinámica con el id del producto. No olvidar los signos ? (pregunta) ni el = (igual)
     return `
         <article class="product-card">
-        <a href="/store/store/html/details.html">
+        <a href="/store/store/html/details.html?id=${product.id}">
             <img class="product-img" src="${product.photo[0]}" alt="${product.id}">
             <div class="product-info">
                 <span class="product-title">${product.title}</span>
