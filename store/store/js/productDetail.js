@@ -24,9 +24,11 @@ function printDetails(id){
         <form class="selector">
             <fieldset>
                 <label class="label" for="color">Color</label>
-                <select type="text" placeholder="Selecciona un color">
-                    <option value="negro espacial">${product.colors[0]}</option>
-                    <option value="gris espacial">${product.colors[1]}</option>
+                <select id="color" type="text" placeholder="Selecciona un color">
+                <!-- .map en ese caso transforma cada color en una cadena HTML de una opción (<option>). -->
+                    ${product.colors.map(
+                        color => `<option value=${color}>${color}</option>`
+                    ).join("")} <!-- Combina las cadenas en una sola cadena de texto -->
                 </select>
             </fieldset>
         </form>
