@@ -10,7 +10,7 @@ const captureText = (event) =>{
     let filterProductos = products.filter(product =>
         // filtra a la vez title y description
         removeDiacritics(product.title.toLowerCase()).includes(text.toLowerCase()) || 
-        removeDiacritics(product.description.toLowerCase()).includes(text.toLowerCase()))
+        removeDiacritics(product.observation.toLowerCase()).includes(text.toLowerCase()))
         // Necesario invocar a la función pasando el array y el id del selector
         printCards(filterProductos, "products")
 }

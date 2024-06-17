@@ -3,15 +3,15 @@
 // Asigna a esa etiqueta un id=”navbar” para usar como selector de JavaScript. 
 // Define una variable navSelector, selecciona con el método getElementById la etiqueta correspondiente donde se Renderizar_a la barra de navegación.  
 const navSelector = document.getElementById("navbar");
-navSelector.style.display = "flex"
-navSelector.style.justifyContent = "space-around"
-navSelector.style.padding = "20px 0"
+// navSelector.style.display = "flex"
+// navSelector.style.justifyContent = "space-around"
+// navSelector.style.padding = "20px 0"
 // Crea una variable options, para guardar un array de objetos. Cada objeto representará los datos de un botón con las propiedades:
 const optionsNav = [
-    {title: "Ofertas de la semana!", linkTo: "/store/store/html/details.html"}, // title: para el texto del botón
-    {title: "Productos", linkTo: "/store/store/html/details.html"}, // linkTo: para el link de direccionamiento
-    {title: "Contacto", linkTo: "/store/store/html/details.html"},
-    {title: "Marcas", linkTo: "/store/store/html/details.html"}
+    {title: "Ofertas de la semana!", linkTo: "../html/details.html"}, // title: para el texto del botón
+    {title: "Productos", linkTo: "../html/details.html"}, // linkTo: para el link de direccionamiento
+    {title: "Contacto", linkTo: "../html/details.html"},
+    {title: "Marcas", linkTo: "../html/details.html"}
 ]
 // Itera con for of
 for ( let optionNav of optionsNav){
@@ -22,9 +22,9 @@ for ( let optionNav of optionsNav){
     anchor.textContent = optionNav.title;
     // Define la propiedad href hacia la propiedad linkTo de cada objeto.
     anchor.href = optionNav.linkTo
-    anchor.style.textDecoration = "none"
-    anchor.style.color = "white"
-    anchor.style.fontWeight = "700"
+    // anchor.style.textDecoration = "none"
+    // anchor.style.color = "white"
+    // anchor.style.fontWeight = "700"
     // Luego “agregar un hijo”  al navSelector
     navSelector.appendChild(anchor)
 }

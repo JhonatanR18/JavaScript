@@ -1,6 +1,6 @@
 // En esta actividad, vas a mejorar el programa store de las secciones anteriores definiendo una lista con las instancias de objetos creados hasta el momento.
 class Product {
-    constructor(id, title, normalPrice, priceWithDiscount, stock, photo, colors, onsale,description, observation, /*supplier,*/ taxPolicy) {
+    constructor(id, title, normalPrice, priceWithDiscount, stock, photo, colors, onsale,observation, description, /*supplier,*/ taxPolicy) {
         this.id = id;
         this.title = title;
         this.normalPrice = normalPrice;
@@ -9,10 +9,10 @@ class Product {
         this.photo = photo;
         this.colors = colors;
         this.onsale = onsale;
-        this.description = description;
+        this.observation = observation;
         // Atributo privado
         // this._supplier = supplier;
-        this.observation = observation;
+        this.description = description;
         this.taxPolicy = taxPolicy;
     }
     // Métodos getter y setter del atributo privado
@@ -40,11 +40,11 @@ const prod1 = new Product( // Primer elemento del array
     500,
     400,
     3,
-    ['/store/store/assets/tablet.jpg'],
+    ['../assets/products/tablet.png', '../assets/products/tablet2.png', '../assets/products/tablet3.png'],
     ['Black', 'White', 'Gray'],
     '-12%',
     'Space Gray',
-    'Una tablet de alta calidad con pantalla HD',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 )
 const prod2 = new Product( // segundo elemento del array
@@ -53,11 +53,11 @@ const prod2 = new Product( // segundo elemento del array
     1500,
     1200,
     5,
-    ['/store/store/assets/iphone.png', '/store/store/assets/iphone2.png', '/store/store/assets/iphone3.png'],
+    ['../assets/products/iphone.png', '../assets/products/iphone2.png', '../assets/products/iphone3.png'],
     ['Black', 'Blue'],
     '-20%',
     'Natural Titanium',
-    'Un celular con excelente rendimiento y cámara de alta resolución',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod3 = new Product( // tercer elemento del array
@@ -66,11 +66,11 @@ const prod3 = new Product( // tercer elemento del array
     6195,
     5637,
     2,
-    ["/store/store/assets/Macbook.jpg"],
+    ["../assets/products/MacbookPro.png", "../assets/products/MacbookPro2.png", "../assets/products/MacbookPro3.png"],
     ['Silver', 'Black'],
     '-12%',
     'Space Gray',
-    'Una laptop potente con características avanzadas para profesionales',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod4 = new Product( // cuarto elemento del array
@@ -79,11 +79,11 @@ const prod4 = new Product( // cuarto elemento del array
     600,
     400,
     8,
-    ['/store/store/assets/monitor.webp', 'monitor2.jpg'],
+    ['../assets/products/monitor.png', '../assets/products/monitor2.png', '../assets/products/monitor3.png'],
     ['Black'],
     '-10%',
     '240Hz 1ms FreeSync Premium',
-    'Un monitor de alta resolución ideal para el trabajo y el entretenimiento',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod5 = new Product( // quinto elemento del array
@@ -92,11 +92,11 @@ const prod5 = new Product( // quinto elemento del array
     150,
     100,
     12,
-    ['/store/store/assets/impresora.webp', 'impresora2.jpg'],
+    ['../assets/products/impresora.png', '../assets/products/impresora2.png', '../assets/products/impresora3.png'],
     ['White'],
     '-25%',
     'Inyección de Tinta',
-    'Una impresora eficiente y rápida con calidad de impresión excepcional',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 ) 
 const prod6 = new Product( // sexto elemento del array
@@ -105,11 +105,11 @@ const prod6 = new Product( // sexto elemento del array
     250,
     220,
     50,
-    ['/store/store/assets/mouse.webp', '/store/store/assets/mouse2.webp'],
+    ['../assets/products/mouse.png', '../assets/products/mouse3.png', '../assets/products/mouse5.png'],
     ['Black', 'Red'],
     '-12%',
     'Mouse inalámbrico',
-    'Un mouse ergonómico y preciso para largas horas de uso',
+    "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
     'Incluye impuesto País y percepción AFIP'
 )
 // Creamos el ARRAY de los productos 

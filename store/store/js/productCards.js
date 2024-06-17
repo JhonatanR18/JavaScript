@@ -6,11 +6,11 @@ function createCard(product) {
     // Debe tener una consulta o query dinámica con el id del producto. No olvidar los signos ? (pregunta) ni el = (igual)
     return `
         <article class="product-card">
-        <a href="/store/store/html/details.html?id=${product.id}">
-            <img class="product-img" src="${product.photo[0]}" alt="${product.id}">
+        <a href="../html/details.html?id=${product.id}">
+            <div class="conProductImg"><img class="product-img" src="${product.photo[0]}" alt="${product.id}"> </div>
             <div class="product-info">
                 <span class="product-title">${product.title}</span>
-                <span class="product-description">${product.description}</span>
+                <span class="product-description">${product.observation}</span>
                 <div class="product-price-block">
                     <span class="normal-price">S/ ${product.normalPrice}</span>
                     <span class="price-with-discount">S/ ${product.priceWithDiscount}</span>

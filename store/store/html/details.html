@@ -7,18 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css..." />
-  <link rel="stylesheet" href="/store/store/css/details.css" />
+  <link rel="stylesheet" href="../css/details.css" />
 </head>
 <body>
   <header>
     <div class="menu">
-      <a class="logo" href="/store/store/html/index.html">
-        <img src="/store/store/assets/tiendamia-logo.svg" alt="Logo Store" width="218">
+      <a class="logo" href="../html/index.html">
+        <img src="../assets/tiendamia-logo.svg" alt="Logo Store" width="218">
       </a>
       <div class="social">
         <ul>
-          <li><a href="#"><img src="/store/store/assets/facebook.png" alt="facebook"></a></li>
-          <li><a href="#"><img src="/store/store/assets/instagram.png" alt="instagram"></a></li>
+          <li><a href="#"><img src="../assets/facebook.png" alt="facebook"></a></li>
+          <li><a href="#"><img src="../assets/instagram.png" alt="instagram"></a></li>
         </ul>
       </div>
     </div>
@@ -26,62 +26,14 @@
   </header>
   <main>
     <div class="container">
-      <div class="columns-container">
-        <div class="product-images-block">
-          <div class="thumbnail-container"><img src="/store/store/assets/Macbook.jpg" alt="Macbook img1"></div>
-          <div class="thumbnail-container"><img src="/store/store/assets/mock2.jpg" alt="Macbook img2"></div>
-          <img class="main-img" src="/store/store/assets/Macbook.jpg" alt="Macbook img1">
-        </div>
-        <div class="product-description-block">
-          <h1 class="titulo">Macbook Pro "13</h1>
-          <form class="selector">
-            <fieldset>
-              <label class="laber" for="color">Color</label>
-              <select type="text" placeholder="Selecciona un color">
-                <option value="negro espacial">Negro Espacial</option>
-                <option value="gris espacial">Gris Espacial</option>
-              </select>
-            </fieldset>
-          </form>
-          <div class="description">
-            <h1>Descripción</h1>
-            <p>Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.</p>
-          </div>
-        </div>
-        <div class="product-checkout-block">
-          <div class="checkout-container">
-            <span class="checkout-total-label">Total:</span>
-            <h2 class="checkout-total-price">S/ 6,195.00</h2>
-            <p class="checkout-description">Incluye impuesto PAÍS y percepción AFIP. Podes recuperar AR$ 50711 haciendo la solicitud en AFIP.</p>
-            <ul class="checkout-policy-list">
-              <li>
-                <span class="policy-icon"><img src="/store/store/assets/truck.png" alt="truck"></span>
-                <span class="policy-desc">Agrega el producto al carrito para conocer los costos de envío.</span>
-              </li>
-              <li>
-                <span class="policy-icon"><img src="/store/store/assets/plane.png" alt="plane"></span>
-                <span class="policy-desc">Recibe aproximadamente en 10 y 15 días hábiles, seleccionando envío normal.</span>
-              </li>
-            </ul>
-            <div class="checkout-process">
-              <div class="top">
-                <input type="number" value="1">
-                <button class="btn-primary">Comprar</button>
-              </div>
-              <div class="bottom">
-                <button class="btn-outline">Añadir al Carrito</button>
-              </div>
-            </div>
-          </div>  
-        </div>
-      </div>
+      <div class="columns-container" id="productDetail"></div>
       <div class="sales-block">
         <h2>Ofertas de la Semana</h2>
         <article class="product-card">
-          <a href="/store/store/html/details.html">
+          <a href="../html/details.html">
           <img 
           class="product-img" 
-          src="/store/store/assets/Macbook.jpg" 
+          src="../assets/Macbook.jpg" 
           alt="Macbook Pro">
           <div class="product-info">
             <span class="product-title">Macbook Pro 15'4</span>
@@ -100,10 +52,10 @@
           </a>
         </article>
         <article class="product-card">
-          <a href="/store/store/html/details.html">
+          <a href="../html/details.html">
           <img 
           class="product-img" 
-          src="/store/store/assets/Macbook.jpg" 
+          src="../assets/Macbook.jpg" 
           alt="Macbook Pro">
           <div class="product-info">
             <span class="product-title">Macbook Pro 15'4</span>
@@ -122,10 +74,10 @@
           </a>
         </article>
         <article class="product-card">
-          <a href="/store/store/html/details.html">
+          <a href="../html/details.html">
           <img 
           class="product-img" 
-          src="/store/store/assets/Macbook.jpg" 
+          src="../assets/Macbook.jpg" 
           alt="Macbook Pro">
           <div class="product-info">
             <span class="product-title">Macbook Pro 15'4</span>
@@ -154,8 +106,8 @@
       </div>
     </div>
   </footer>
-  <script src="/store/store/js/layout.js"></script>
-  <script src="/store/store/js/products.js"></script>
-  <script src="/store/store/js/productDetail.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/productDetail.js"></script>
 </body>
 </html>
