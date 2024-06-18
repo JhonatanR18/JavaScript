@@ -14,16 +14,16 @@ function printDetails(id){
         'es-PE', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
-        })}`    
+        })}`;
     // variable para la plantilla de la vista de detalles || con ${} pon los datos correspondientes al detalle del producto
     const detailsTemplate = `
     <div class="product-images-block">
         <div class="thumbnail-container">
             ${product.photo.map(
-                photo => `<img src="${photo}" alt="mini">`
+                photo => `<img src="${photo}" alt="mini" onclick="changeMini(event)">`
             ).join("")}
         </div>
-        <img class="main-img" src="${product.photo[0]}" alt="${product.id}">
+        <img id="big-img" class="main-img" src="${product.photo[0]}" alt="${product.id}">
     </div>
     <div class="product-description-block">
         <h1 class="titulo">${product.title}</h1>
@@ -75,4 +75,11 @@ function printDetails(id){
     const detailsSelector = document.querySelector("#productDetail")
     detailsSelector.innerHTML = detailsTemplate
 }
+// función click para cambiar de imagen
+function changeMini(event){
+    const selectedSrc = event.target.src
+    const bigSelector = document.querySelector("#big-img")
+    bigSelector.src = selectedSrc
+}
+
 printDetails(id)
