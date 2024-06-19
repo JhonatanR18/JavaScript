@@ -88,6 +88,7 @@ function changeMini(event){
     const bigSelector = document.querySelector("#big-img")
     bigSelector.src = selectedSrc
 }
+//  Actividad: Calcular el subtotal a pagar
 // función para cambiar precio // viene del atributo onchange en el input
 function subTotal(event){
     // traer la cantidad del input en tipo number
