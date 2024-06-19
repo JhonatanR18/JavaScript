@@ -112,7 +112,7 @@ function subTotal(event){
 // función que dependa del id del botón
 function saveProduct(id){
     // busque el producto con el id
-    const product = products.find(each => each.id == id)
+    const product = products.find(product => product.id == id)
     // calcular el precio total de acuerdo a la cantidad insertada en el input
     const quantity = document.querySelector("#quantity-1").value
     const subTotal = quantity * product.priceWithDiscount;
@@ -126,8 +126,17 @@ function saveProduct(id){
         colors: document.querySelector("#color").value,
         quantity: document.querySelector("#quantity-1").value,
     };
-    // convertir a JSON
-    const stringifyProduct = JSON.stringify(objectProduct )
-    // guardar el objeto en la memoria del navegador
-    localStorage.setItem('cart', stringifyProduct)
+    // verifica si la clave 'card' existe en el localStorage
+    if(localStorage.getItem('cart')){
+        // si existe, obtener el contenido y convertirlo en un nuevo array
+        let cart = JSON.parse(localStorage.getItem('cart'))
+        // agregar el nuevo producto al array
+        cart.push(objectProduct)
+        // guarda el array actualizado en el storage
+        localStorage.setItem('cart', JSON.stringify(cart))
+    } else {
+        // si no existe crear un nuevo array con el producto y guardarlo en el storage
+        let cart = [objectProduct]
+        localStorage.setItem('cart', JSON.stringify(cart))
     }
+}
