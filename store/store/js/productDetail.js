@@ -125,6 +125,7 @@ function saveProduct(id){
         subTotal: subTotal,
         colors: document.querySelector("#color").value,
         quantity: document.querySelector("#quantity-1").value,
+        description: product.description
     };
     // verifica si la clave 'card' existe en el localStorage
     if(localStorage.getItem('cart')){

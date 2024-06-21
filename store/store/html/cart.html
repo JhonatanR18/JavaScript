@@ -38,68 +38,19 @@
   <section id="carts">
     <div class="container">
       <div class="columns-container">
-        <div class="articles">
-          <article id="cart-products" class="cart">
-            <div class="cart-img"><img src="../assets/products/MacbookPro.png" alt="MacbookPro"></div>
-            <div class="cart-info">
-              <h3 class="cart-title">MacBook Pro 16"</h3>
-              <span class="cart-color">-Black</span>
-              <span class="cart-description">Tablet Lenovo Tab M10 HD (3rd Gen) 10.1" WUXGA (1920x1200) IPS, 10-Point Multi-touch Wireless 802.11ac 1x1 + Bluetooth 5.0 + 4G LTE + Voice Call, Procesador Unisoc T610 (8C, 2x A75 @1.8GHz + 6x A55 @1.8GHz), Memoria RAM 4GB Soldered LPDDR4X, Almacenamiento interno de 64GB eMMC 5.1 (eMCP), Ranura de expansion microSD de (Hasta 128GB/FAT32 & 2TB/exFAT), Card Reader Nano-SIM & microSD Card Slot, Puertos: 1 x headphone & microphone combo jack (3.5mm) / 1 x USB-C 2.0 (Soporta transferencia de datos y Carga) / 1 x Card Slot, Camara posterior 8.0 MP / Camara frontal 5.0 MP, Reproduce audio y video.</span>
-              <input class="cart-quantity" type="number" value="1">
-            </div>
-            <div class="cart-price">
-              <span class="cart-price-discount">S/ 12,344.00</span>
-            </div>
-          </article>
-          <article id="cart-products" class="cart">
-            <div class="cart-img"><img src="../assets/products/MacbookPro.png" alt="MacbookPro"></div>
-            <div class="cart-info">
-              <h3 class="cart-title">MacBook Pro 16"</h3>
-              <span class="cart-color">-Black</span>
-              <span class="cart-description">Tablet Lenovo Tab M10 HD (3rd Gen) 10.1" WUXGA (1920x1200) IPS, 10-Point Multi-touch Wireless 802.11ac 1x1 + Bluetooth 5.0 + 4G LTE + Voice Call, Procesador Unisoc T610 (8C, 2x A75 @1.8GHz + 6x A55 @1.8GHz), Memoria RAM 4GB Soldered LPDDR4X, Almacenamiento interno de 64GB eMMC 5.1 (eMCP), Ranura de expansion microSD de (Hasta 128GB/FAT32 & 2TB/exFAT), Card Reader Nano-SIM & microSD Card Slot, Puertos: 1 x headphone & microphone combo jack (3.5mm) / 1 x USB-C 2.0 (Soporta transferencia de datos y Carga) / 1 x Card Slot, Camara posterior 8.0 MP / Camara frontal 5.0 MP, Reproduce audio y video.</span>
-              <input class="cart-quantity" type="number" value="1">
-            </div>
-            <div class="cart-price">
-              <span class="cart-price-discount">S/ 12,344.00</span>
-            </div>
-          </article>
-          <article id="cart-products" class="cart">
-            <div class="cart-img"><img src="../assets/products/MacbookPro.png" alt="MacbookPro"></div>
-            <div class="cart-info">
-              <h3 class="cart-title">MacBook Pro 16"</h3>
-              <span class="cart-color">-Black</span>
-              <span class="cart-description">Tablet Lenovo Tab M10 HD (3rd Gen) 10.1" WUXGA (1920x1200) IPS, 10-Point Multi-touch Wireless 802.11ac 1x1 + Bluetooth 5.0 + 4G LTE + Voice Call, Procesador Unisoc T610 (8C, 2x A75 @1.8GHz + 6x A55 @1.8GHz), Memoria RAM 4GB Soldered LPDDR4X, Almacenamiento interno de 64GB eMMC 5.1 (eMCP), Ranura de expansion microSD de (Hasta 128GB/FAT32 & 2TB/exFAT), Card Reader Nano-SIM & microSD Card Slot, Puertos: 1 x headphone & microphone combo jack (3.5mm) / 1 x USB-C 2.0 (Soporta transferencia de datos y Carga) / 1 x Card Slot, Camara posterior 8.0 MP / Camara frontal 5.0 MP, Reproduce audio y video.</span>
-              <input class="cart-quantity" type="number" value="1">
-            </div>
-            <div class="cart-price">
-              <span class="cart-price-discount">S/ 12,344.00</span>
-            </div>
-          </article>
-          <article id="cart-products" class="cart">
-            <div class="cart-img"><img src="../assets/products/MacbookPro.png" alt="MacbookPro"></div>
-            <div class="cart-info">
-              <h3 class="cart-title">MacBook Pro 16"</h3>
-              <span class="cart-color">-Black</span>
-              <span class="cart-description">Tablet Lenovo Tab M10 HD (3rd Gen) 10.1" WUXGA (1920x1200) IPS, 10-Point Multi-touch Wireless 802.11ac 1x1 + Bluetooth 5.0 + 4G LTE + Voice Call, Procesador Unisoc T610 (8C, 2x A75 @1.8GHz + 6x A55 @1.8GHz), Memoria RAM 4GB Soldered LPDDR4X, Almacenamiento interno de 64GB eMMC 5.1 (eMCP), Ranura de expansion microSD de (Hasta 128GB/FAT32 & 2TB/exFAT), Card Reader Nano-SIM & microSD Card Slot, Puertos: 1 x headphone & microphone combo jack (3.5mm) / 1 x USB-C 2.0 (Soporta transferencia de datos y Carga) / 1 x Card Slot, Camara posterior 8.0 MP / Camara frontal 5.0 MP, Reproduce audio y video.</span>
-              <input class="cart-quantity" type="number" value="1">
-            </div>
-            <div class="cart-price">
-              <span class="cart-price-discount">S/ 12,344.00</span>
-            </div>
-          </article>          
-        </div>
+        <div id="cart-container"></div>
         <div id="total" class="cart-total">
           <div class="total-info">
             <h2 class="title">Resumen del Pedido</h2>
             <div class="container-total">
-              <span class="total-title">Total</span>
-              <span class="total-price">S/ 14,544.00</span>
+                <span class="total-title">Total</span>
+                <span id="id-price" class="total-price" data-value="${price.subTotal}">S/ 12,232.00</span>
             </div>
             <span class="tax-policy">Incluye impuesto PAÍS y porcentaje AFIP.</span>
             <div class="btn-primary">
-              <button class="button-buy">Comprar</button>
+                <button class="button-buy">Comprar</button>
             </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -117,6 +68,7 @@
       </div>
     </div>
   </footer>
+  <script src="../js/cart.js"></script>
   <script src="../js/layout.js"></script>
 </body>
 </html>
