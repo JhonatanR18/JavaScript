@@ -36,3 +36,34 @@ function printCard(arrayProductsLS, idSelector){
     cartSelector.innerHTML = cartTemplates
 }
 printCard(cartProducts, "cart-container")
+function createTotal (arrayOfProducts){
+    // variable para almacenar el precio total
+    let total = 0;
+    // iterar sobre los productos del carrito
+    arrayOfProducts.forEach(each => {
+        // sumar el precio de cada producto al total
+        total = total + (each.price * each.quantity)
+    });
+    // traer el selector del contenedor del total
+    const cartTotal = document.querySelector("#cart-total")
+    // limpiar el contenedor
+    cartTotal.innerHTML = "";
+    // agregar el HTML
+    cartTotal.innerHTML = `
+    <div id="total" class="cart-total">
+        <div class="total-info">
+            <h2 class="title">Resumen del Pedido</h2>
+            <div class="container-total">
+                <span class="total-title">Total</span>
+                <span id="id-price" class="total-price">${formatPrice(total)}</span>
+            </div>
+            <span class="tax-policy">Incluye impuesto PAÍS y porcentaje AFIP.</span>
+            <div class="btn-primary">
+                <button class="button-buy">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    `;
+}
+createTotal(cartProducts)
