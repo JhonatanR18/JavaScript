@@ -198,6 +198,23 @@ justify-content: center;
   font-size: 12px;
   font-weight: 700;
 }
+/* mensaje no hay productos en el carrito */
+.container-carrito{
+  width: 250px;
+  display: none;
+  padding: 10px;
+  margin: 0;
+}
+.mgs-carrito{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.container-carrito h2{
+  font-size: 16px;
+  color: teal;
+}
+
 /* order summary || RESUMEN DEL PEDIDO - SECCIÓN*/
 #total {
   background-color: #F0F0F0;

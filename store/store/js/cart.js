@@ -1,5 +1,5 @@
 
-let cartProducts = JSON.parse(localStorage.getItem('cart'))
+let cartProducts = JSON.parse(localStorage.getItem('cart')) || []
 
 // formatear precios
 function formatPrice(precio){
@@ -18,11 +18,11 @@ function createCart (product){
             <h3 class="cart-title">${product.title}</h3>
             <span class="cart-color">${product.colors}</span>
             <span class="cart-description">${product.description}</span>
-            <input class="cart-quantity" type="number" onchange="sutTotal(event)" value="${product.quantity}">
+            <input id="${product.id}_${product.colors}" class="cart-quantity" type="number" onchange="changeQuantity(event)" value="${product.quantity}">
         </div>
         <div class="cart-price">
-            <span id="priceNor" class="cart-price-discount">${formatPrice(product.price)}</span>
-            <span id="priceNor" class="cart-price-discount">${formatPrice(product.price * product.quantity)}</span>
+            <span id="price-nor" class="cart-price-discount">${formatPrice(product.price)}</span>
+            <span id="price-total" class="cart-price-discount">${formatPrice(product.price * product.quantity)}</span>
         </div>
     </article>
     `
@@ -34,8 +34,18 @@ function printCard(arrayProductsLS, idSelector){
     }
     const cartSelector = document.getElementById(idSelector)
     cartSelector.innerHTML = cartTemplates
+    
+    // Si el carrito está vacío (length === 0), se muestra el mensaje de "NO HAY PRODUCTOS EN EL CARRITO" estableciendo el estilo display del elemento emptyMessage a block.
+    const emptyMessage = document.getElementById('message-cart');
+    if (arrayProductsLS.length === 0) {
+        emptyMessage.style.display = 'block';
+    } else {
+        emptyMessage.style.display = 'none';
+    }
 }
 printCard(cartProducts, "cart-container")
+
+// print total
 function createTotal (arrayOfProducts){
     // variable para almacenar el precio total
     let total = 0;
@@ -48,22 +58,44 @@ function createTotal (arrayOfProducts){
     const cartTotal = document.querySelector("#cart-total")
     // limpiar el contenedor
     cartTotal.innerHTML = "";
-    // agregar el HTML
-    cartTotal.innerHTML = `
-    <div id="total" class="cart-total">
-        <div class="total-info">
-            <h2 class="title">Resumen del Pedido</h2>
-            <div class="container-total">
-                <span class="total-title">Total</span>
-                <span id="id-price" class="total-price">${formatPrice(total)}</span>
-            </div>
-            <span class="tax-policy">Incluye impuesto PAÍS y porcentaje AFIP.</span>
-            <div class="btn-primary">
-                <button class="button-buy">Comprar</button>
+    // verifica si el arrayOfProducts contiene elementos y si tiene ejecuta el bloque
+    if (arrayOfProducts.length > 0 ){
+        cartTotal.innerHTML = `
+        <div id="total" class="cart-total">
+            <div class="total-info">
+                <h2 class="title">Resumen del Pedido</h2>
+                <div class="container-total">
+                    <span class="total-title">Total</span>
+                    <span id="id-price" class="total-price">${formatPrice(total)}</span>
+                </div>
+                <span class="tax-policy">Incluye impuesto PAÍS y porcentaje AFIP.</span>
+                <div class="btn-primary">
+                    <button class="button-buy">Comprar</button>
+                </div>
             </div>
         </div>
-    </div>
+        `;
+    }
 
-    `;
 }
 createTotal(cartProducts)
+
+function changeQuantity(event){
+    // traer el id del producto
+    const id = event.target.id.split("_");
+    // traer el valor de la cantidad
+    const quantity = event.target.value
+    // iterar sobre los productos del carrito
+    cartProducts.forEach(each => {
+        if (each.id == id[0] && each.colors == id[1]){
+            // cambia la cantidad del producto
+            each.quantity = quantity
+        }
+    })
+    // guarda el carrito en el localStorage
+    localStorage.setItem('cart', JSON.stringify(cartProducts))
+    // Renderizar los productos del carrito
+    printCard(cartProducts, "cart-container")
+    // Renderizar el total a pagar
+    createTotal(cartProducts)
+}
