@@ -70,7 +70,7 @@ function createTotal (arrayOfProducts){
                 </div>
                 <span class="tax-policy">Incluye impuesto PAÍS y porcentaje AFIP.</span>
                 <div class="btn-primary">
-                    <button class="button-buy">Comprar</button>
+                    <button onclick="buySelector()" id="buy-button" class="button-buy">Comprar</button>
                 </div>
             </div>
         </div>
