@@ -1,6 +1,4 @@
-// define una variable buySelector para seleccionar con el método getElementById la etiqueta del botón “Finaliza tu compra”.
-const finishBuy = document.getElementById('buy-button')
-
+// Función ya definida en el evento onclick del button
 function buySelector(){
     // borra los productos del localStorage
     localStorage.removeItem('cart');
@@ -10,5 +8,3 @@ function buySelector(){
     printCard(cartProducts, 'cart-container');
     createTotal(cartProducts)
 }
-// agregamos el evento click al botón 
-finishBuy.addEventListener('click')

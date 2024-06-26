@@ -109,12 +109,12 @@ function subTotal(event){
     priceSelector.innerHTML = formatPrice(subTotalDes)
 }
 // función click "añadir carrito" localStorage // viene del atributo onclick en el button añadir carrito
-// función que dependa del id del botón
+// Guarda un producto en el carrito o actualiza la cantidad si ya existe.
 function saveProduct(id){
     // busque el producto con el id
     const product = products.find(product => product.id == id)
-    // calcular el precio total de acuerdo a la cantidad insertada en el input
-    const quantity = document.querySelector("#quantity-1").value
+    // // Obtiene el valor actual del input de cantidad y lo convierte a un número entero
+    const quantity = parseFloat(document.querySelector("#quantity-1").value)
     const subTotal = quantity * product.priceWithDiscount;
     // objeto con las propiedades especificas de la compra
     const objectProduct = {
@@ -124,20 +124,27 @@ function saveProduct(id){
         price: product.priceWithDiscount,
         subTotal: subTotal,
         colors: document.querySelector("#color").value,
-        quantity: document.querySelector("#quantity-1").value,
+        quantity: quantity,
         description: product.description
     };
-    // verifica si la clave 'card' existe en el localStorage
-    if(localStorage.getItem('cart')){
-        // si existe, obtener el contenido y convertirlo en un nuevo array
-        let cart = JSON.parse(localStorage.getItem('cart'))
-        // agregar el nuevo producto al array
-        cart.push(objectProduct)
-        // guarda el array actualizado en el storage
-        localStorage.setItem('cart', JSON.stringify(cart))
-    } else {
-        // si no existe crear un nuevo array con el producto y guardarlo en el storage
-        let cart = [objectProduct]
-        localStorage.setItem('cart', JSON.stringify(cart))
+    // Actualización
+    // obtiene los cart del lS. Si no hay productos guardados inicializa cart como un array vacío
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // busca si ya existe un product que tenga el mismo id & color en el carrito ('cart').
+    // si existe, asigna ese producto a existingProduct
+    let existingProduct = cart.find(p => p.id == objectProduct.id && p.colors == objectProduct.colors);
+    // si el producto ya existe en el carrito
+    if(existingProduct){
+        // suma la nueva cantidad existente
+        existingProduct.quantity += objectProduct.quantity;
+        // Calcula el nuevo subtotal basado en la nueva cantidad
+        existingProduct.subTotal = existingProduct.quantity * existingProduct.price;
+        alert(`${product.title} ya está en el carrito. Cantidad actualizada.`);
+    } else { // si el producto no existe en el carrito
+        // agrega el nuevo producto al array del carrito
+        cart.push(objectProduct);
+        alert(`${product.title} se agregado al carrito.`);
     }
+    // guarda el carrito actualizado en el localeStorage
+    localStorage.setItem('cart',JSON.stringify(cart))
 }

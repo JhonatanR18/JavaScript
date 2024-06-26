@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css..." />
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/favorites.css" />
   <script src="https://kit.fontawesome.com/e27661fab1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,17 +16,12 @@
       <a class="logo" href="../html/index.html">
         <img src="../assets/tiendamia-logo.svg" alt="Logo Store" width="218">
       </a>
-      <div class="form">
-        <form>
-          <input type="text" placeholder="Search" id="search">
-        </form>
-      </div>
       <div class="social">
         <ul>
           <li class="social-icon"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
           <li class="social-icon"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
           <li><a href="../html/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-          <li><a href="../html/favorites.html"><i class="fa-regular fa-star"></i></a></li>     
+          <li><a href="../html/favorites.html"><i class="fa-regular fa-star"></i></a></li>          
           <li><a href="../html/index.html"><i class="fa-solid fa-right-to-bracket"></i></a></li>
         </ul>
       </div>
@@ -36,16 +31,23 @@
   <section id="hero">
     <div class="container">
       <div class="title-container">
-        <span>Tecnología</span>
-        <span>Renovada</span>
+        <span>Mis</span>
+        <span>Favoritos</span>
       </div>
     </div>
   </section>
-  <main>
+  <section id="carts">
     <div class="container">
-      <div id="products" class="product-container"></div>
+      <div class="columns-container">
+        <div id="fav-container"></div>
+        <div class="container-carrito" id="message-cart">
+          <div class="mgs-carrito">
+            <h2 >NO HAY PRODUCTOS EN FAVORITOS</h2>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
   <footer>
     <div class="container">
       <div id="footer" class="footer-container"></div>
@@ -54,9 +56,8 @@
       </div>
     </div>
   </footer>
-  <script src="../js/layout.js"></script>
-  <script src="../js/products.js"></script>
-  <script src="../js/productCards.js"></script>
-  <script src="../js/filterProducts.js"></script>
+  <script src="../js/layout.js"></script>  
+  <script src="../js/favorites.js"></script>
+  <script src="../js/buy.js"></script>
 </body>
 </html>

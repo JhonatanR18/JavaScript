@@ -24,6 +24,9 @@ function createCart (product){
             <span id="price-nor" class="cart-price-discount">${formatPrice(product.price)}</span>
             <span id="price-total" class="cart-price-discount">${formatPrice(product.price * product.quantity)}</span>
         </div>
+        <div class="cart-fav" onclick=saveFavorites(${product.id})>
+            <i class="fa-regular fa-star"></i>
+        </div>
     </article>
     `
 }   
@@ -80,16 +83,19 @@ function createTotal (arrayOfProducts){
 }
 createTotal(cartProducts)
 
+// Cambia la cantidad de un producto en el carrito según la entrada del usuario.
 function changeQuantity(event){
-    // traer el id del producto
-    const id = event.target.id.split("_");
-    // traer el valor de la cantidad
-    const quantity = event.target.value
-    // iterar sobre los productos del carrito
+    // Divide el id del elemento objetivo en dos partes: id y color
+    const [id, color] = event.target.id.split("_");
+    // Obtiene la cantidad nueva del input y la convierte a número entero
+    const quantity = parseInt(event.target.value);
+    // Verifica si el producto actual coincide con el id y color obtenidos del evento
     cartProducts.forEach(each => {
-        if (each.id == id[0] && each.colors == id[1]){
-            // cambia la cantidad del producto
+        if (each.id == id && each.colors == color){
+            // Actualiza la cantidad del producto en el carrito
             each.quantity = quantity
+            // Calcula el nuevo subtotal del producto
+            each.subTotal = each.quantity * each.price
         }
     })
     // guarda el carrito en el localStorage
@@ -98,4 +104,24 @@ function changeQuantity(event){
     printCard(cartProducts, "cart-container")
     // Renderizar el total a pagar
     createTotal(cartProducts)
+}
+// guarda un producto en la lista de favoritos si no está previamente agregado, o muestra una alerta si ya está en favoritos.
+function saveFavorites(id){
+    // buscamos el producto en cartProducts que coincida con el id pasando como argumento la función saveFavorites
+    const product = cartProducts.find(product => product.id == id)
+    // obtiene los fav del lS. Si no hay productos guardados inicializa favProducts como un array vacío
+    const favProducts = JSON.parse(localStorage.getItem('fav')) || []
+    // some para verificar si el producto ya existe en favProducts que tenga el mismo id & color que el "product" actual
+    // El "!" antes, verifica si no se encontró ningún producto en favoritos que coincida con "product" 
+    if(!favProducts.some(p => p.id == product.id && p.colors == product.colors)){
+        // si el producto no esta en favoritos ('!favProducts.some(...)' es verdadero)
+        // se añade product al array favProducts utilizando push
+        favProducts.push(product)
+        // guarda el array actualizado
+        localStorage.setItem('fav', JSON.stringify(favProducts))
+        alert(`${product.title} se ha agregado a favoritos.`)
+    } else {
+        // muestra una alerta que dice que el producto ya esta en favoritos, que ya existe en favProducts
+        alert(`${product.title} ya esta en favoritos.`)
+    }
 }
